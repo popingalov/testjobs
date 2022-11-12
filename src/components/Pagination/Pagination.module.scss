@@ -1,0 +1,14 @@
+.Pagination {
+}
+.a {
+  @apply relative inline-flex h-6 w-6  items-center justify-center bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+.aFocus {
+  @apply border-b border-b-indigo-500;
+  @extend .a;
+}
+
+.arrow {
+  @apply relative inline-flex h-6 w-6 items-center rounded-l-md bg-white  px-1 py-1 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}

@@ -1,0 +1,7 @@
+.JobGulery {
+  @apply mb-6 flex flex-col items-center;
+}
+
+.img {
+  @apply mr-5 mt-[45px] h-[66px] min-h-[66px] w-[66px] min-w-[66px] rounded-[50%] border;
+}
