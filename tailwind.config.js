@@ -9,9 +9,11 @@ module.exports = {
         employ: 'rgba(85, 105, 158, 0.3)',
         employBorder: 'rgba(85, 105, 158, 0.3)',
         empolyText: '#55699E',
-        benefits: 'rgba(255, 207, 0, 1)',
+        benefits: 'rgba(255, 207, 0, 0.3)',
         benefitsBorder: '#FFCF00',
         benefitsText: '#988B49',
+        standart: '#3A4562',
+        filltex: 'rgba(56, 65, 93, 0.6)',
       },
       text: {
         title: '#3A4562',

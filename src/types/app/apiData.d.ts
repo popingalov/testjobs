@@ -1,11 +1,11 @@
 interface IData {
-  address: String;
-  benefits: String[];
+  address: string;
+  benefits: string[];
   createdAt: string;
-  description: String;
-  email: String;
-  employment_type: String[];
-  id: String;
+  description: string;
+  email: string;
+  employment_type: string[];
+  id: string;
   location: { lat: number; long: number };
   name: string;
   phone: string;
@@ -18,5 +18,6 @@ interface IData {
 interface TDataSize {
   apiData: IData[];
   starSize: { width: string; height: string };
-loadData?:(e:number)=>void
+  loadData?: (e: number) => void;
+  upArray?: (idx:number)=>void
 };

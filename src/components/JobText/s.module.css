@@ -1,0 +1,4 @@
+.list {
+  list-style-type: square;
+  @apply ml-5;
+}

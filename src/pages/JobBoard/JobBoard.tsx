@@ -2,12 +2,22 @@
 import Container from '../../components/Container/Container';
 import JobGulery from '../../components/JobGulery';
 import Pagination from '../../components/Pagination';
-export default function Home({ apiData, starSize, loadData }: TDataSize) {
+export default function Home({
+  apiData,
+  starSize,
+  loadData,
+  upArray,
+}: TDataSize) {
   const imitPag = 28;
   return (
     <Container>
       <div className="flex flex-col items-center">
-        <JobGulery loadData={loadData} apiData={apiData} starSize={starSize} />
+        <JobGulery
+          loadData={loadData}
+          upArray={upArray}
+          apiData={apiData}
+          starSize={starSize}
+        />
         <Pagination loadData={loadData} limit={imitPag} />
       </div>
     </Container>

@@ -4,27 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Star } from '../../assets/icons/star.svg';
 import { ReactComponent as Location } from '../../assets/icons/location.svg';
 import { v4 } from 'uuid';
+import { takeDifferenceTime } from '../../helperFunc';
 
-const JobGulery: FC<TDataSize> = ({ apiData, starSize }) => {
+const JobGulery: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
   const id = React.useId;
   const navigate = useNavigate();
-  function takeDifferenceTime(el: string): string {
-    const date = new Date();
-    const newDate = new Date(el);
-
-    const difference = date.getTime() - newDate.getTime();
-    const normalize = difference / 1000 / 60 / 60 / 24;
-
-    if (normalize > 365) {
-      const year = Math.floor(normalize / 365);
-      const day = Math.floor(normalize - year * 365);
-
-      return `Poseted ${year} ${year > 1 ? 'years' : 'year'} and 
-                      ${day} ${day > 1 ? 'days' : 'day'} ago `;
-    }
-
-    return `Poseted ${normalize} ${normalize > 1 ? 'days' : 'day'} ago `;
-  }
 
   function takeStarRating(): JSX.Element[] {
     const result = [];
@@ -42,7 +26,12 @@ const JobGulery: FC<TDataSize> = ({ apiData, starSize }) => {
     });
   }
 
-  function goTo(id: number) {
+  function goTo(id: string, idx: number) {
+    const arr = JSON.stringify(apiData[idx]);
+    localStorage.setItem('details', arr);
+    if (upArray) {
+      upArray(idx);
+    }
     navigate(`/details/${id}`);
   }
 
@@ -54,7 +43,7 @@ const JobGulery: FC<TDataSize> = ({ apiData, starSize }) => {
           {apiData?.map((el, idx) => {
             return (
               <li
-                onClick={() => goTo(idx)}
+                onClick={() => goTo(el.id, idx)}
                 key={id()}
                 className=" mb-2 flex max-w-[400px] rounded-lg border-2 px-3 pt-3 pb-7 text-[#878D9D] last:mb-0  "
               >

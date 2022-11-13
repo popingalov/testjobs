@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import miniApi from './miniApi';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useLoadScript } from '@react-google-maps/api';
@@ -9,10 +9,13 @@ import DetailsBord from 'pages/DetailsBord';
 // import Map from 'components/Map';
 function App() {
   const [data, setData] = useState<IData[] | any>();
+  const [details, setDetais] = useState<IData | null>(null);
+
   const starSize = useResize();
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyADV0BWsVdtInBGNDQiYbm9hzbLvKLgik4',
   });
+
   async function startState(page: number = 1) {
     const oldObj = await miniApi(page);
     let newObj = [];
@@ -56,25 +59,37 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function upArray(idx: number) {
+    setDetais(data[idx]);
+  }
+
   return (
     <>
-      {data && (
-        <Routes>
-          <Route path="/" element={<Navigate state="/page" to="/page/1" />} />
-          <Route
-            path="/page/:pageNumber/*"
-            element={
-              <HomePage
-                loadData={startState}
-                apiData={data}
-                starSize={starSize}
-              />
-            }
-          />
-          <Route path="/*" element={<h1>Не ламай мені сайт!</h1>} />
-          <Route path="/details/:id/*" element={<DetailsBord />} />
-          <Route path="/*" element={<h1>Не ламай мені сайт!</h1>} />
-        </Routes>
+      {!data ? (
+        <div>Я спінер</div>
+      ) : (
+        <Suspense fallback={<div>Я спінер</div>}>
+          <Routes>
+            <Route path="/" element={<Navigate state="/page" to="/page/1" />} />
+            <Route
+              path="/page/:pageNumber/*"
+              element={
+                <HomePage
+                  upArray={upArray}
+                  loadData={startState}
+                  apiData={data}
+                  starSize={starSize}
+                />
+              }
+            />
+            <Route path="/*" element={<h1>Не ламай мені сайт!</h1>} />
+            <Route
+              path="/details/:id/*"
+              element={<DetailsBord data={details ? details : data[0]} />}
+            />
+            <Route path="/*" element={<h1>Не ламай мені сайт!</h1>} />
+          </Routes>
+        </Suspense>
       )}
     </>
   );
