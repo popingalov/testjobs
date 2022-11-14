@@ -1,5 +1,5 @@
 import axios from "axios";
-const {REACT_APP_TOKEN} = process.env
+const { REACT_APP_TOKEN } = process.env
 
 const BASE = {
     URL: "https://api.json-generator.com/templates/ZM1r0eic3XEy",
@@ -11,8 +11,12 @@ axios.defaults.headers.common.Authorization = `Bearer ${BASE.TOKEN}`;
 
 
 async function miniApi(page: number = 1) {
-     const { data } = await axios.get<IData[]>(`/data?page=${page}`);
+   try {
+      const { data } = await axios.get<IData[]>(`/data?page=${page}`);
     return data
+   } catch (error) {
+    return false
+   }
   }
   
 

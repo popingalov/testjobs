@@ -5,7 +5,7 @@ import { useLoadScript } from '@react-google-maps/api';
 import HomePage from './pages/JobBoard';
 import useResize from './hooks/useResize';
 import DetailsBord from 'pages/DetailsBord';
-// import devProps from './help.json';
+import devProps from './help.json';
 // import Map from 'components/Map';
 function App() {
   const [data, setData] = useState<IData[] | any>();
@@ -18,7 +18,8 @@ function App() {
   });
 
   async function startState(page: number = 1) {
-    const oldObj = await miniApi(page);
+    const oldObj = (await miniApi(page)) || devProps;
+
     let newObj = [];
     let limitText = 'Мангеттен, Нью-Йорк Каунти';
     const limit = 1;
