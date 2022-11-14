@@ -31,7 +31,7 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
   return (
     <Container>
       <main className="flex justify-between text-fill">
-        <div className="w-full max-w-[700px]">
+        <div className="mr-6 w-full max-w-[700px]">
           <div className="mb-6 flex  justify-between border-b border-solid border-fill pb-6 font-bold">
             <p> Job Details</p>
             <div className="flex">

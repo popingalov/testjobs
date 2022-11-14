@@ -11,7 +11,7 @@ export default function useResponsiveBreakpoints() {
     new ResizeObserver(entries => {
         const { width } = entries[0].contentRect
        
-        if (width < 767) {
+        if (width < 1024) {
             setBreakSize(version.mobile)    
             return
         }
