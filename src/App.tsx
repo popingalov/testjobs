@@ -1,12 +1,16 @@
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import miniApi from './miniApi';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useLoadScript } from '@react-google-maps/api';
 import HomePage from './pages/JobBoard';
+//
 import useResize from './hooks/useResize';
-import DetailsBord from 'pages/DetailsBord';
 import devProps from './help.json';
-// import Map from 'components/Map';
+const googleKey = process.env.REACT_APP_GOOGLEKEY || 's';
+//
+
+const DetailsBord = lazy(() => import('pages/DetailsBord'));
+
 function App() {
   const [data, setData] = useState<IData[] | any>();
   const [details, setDetais] = useState<IData | null>(null);
@@ -14,7 +18,7 @@ function App() {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyADV0BWsVdtInBGNDQiYbm9hzbLvKLgik4',
+    googleMapsApiKey: googleKey,
   });
 
   async function startState(page: number = 1) {

@@ -6,7 +6,7 @@ import { ReactComponent as ShapeMini } from '../../assets/icons/shape.svg';
 import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
 import { takeDifferenceTime } from '../../helperFunc';
 import { useNavigate } from 'react-router-dom';
-import Mob from 'components/JobText/Mob';
+import Mob from 'components/JobText';
 import Button from 'components/Button';
 import Map from 'components/Map';
 import Container from 'components/Container/Container';
