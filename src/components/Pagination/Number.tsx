@@ -1,4 +1,4 @@
-import s from './Pagination.module.scss';
+import s from './Pagination.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
 interface INumber {
   number: number;

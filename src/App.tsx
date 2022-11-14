@@ -10,8 +10,8 @@ import DetailsBord from 'pages/DetailsBord';
 function App() {
   const [data, setData] = useState<IData[] | any>();
   const [details, setDetais] = useState<IData | null>(null);
-
   const starSize = useResize();
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyADV0BWsVdtInBGNDQiYbm9hzbLvKLgik4',
   });
@@ -85,7 +85,12 @@ function App() {
             <Route path="/*" element={<h1>Не ламай мені сайт!</h1>} />
             <Route
               path="/details/:id/*"
-              element={<DetailsBord data={details ? details : data[0]} />}
+              element={
+                <DetailsBord
+                  starSize={starSize}
+                  data={details ? details : data[0]}
+                />
+              }
             />
             <Route path="/*" element={<h1>Не ламай мені сайт!</h1>} />
           </Routes>

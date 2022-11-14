@@ -13,8 +13,6 @@ export default function Mob({ el }: IMob) {
   return (
     <div className="mb-7">
       {result?.map((el, idx) => {
-        console.log(last);
-
         if (idx === 0) {
           return <p className="mb-10">{el}</p>;
         }

@@ -4,7 +4,7 @@
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#242f3e"
+          "color": "#2A3047"
         }
       ]
     },
@@ -37,7 +37,7 @@
       "elementType": "labels.text.fill",
       "stylers": [
         {
-          "color": "#d59563"
+          "color": "#2A3047"
         }
       ]
     },

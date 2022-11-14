@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { FC, useEffect, useState } from 'react';
-import s from './Pagination.module.scss';
+import s from './Pagination.module.css';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { NavLink, useLocation, useParams } from 'react-router-dom';
 import Number from './Number';
