@@ -23,6 +23,7 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
   const nav = useNavigate();
   const id = React.useId;
   window.scroll(0, 0);
+  console.log('desk');
 
   const el: IData = data
     ? data

@@ -10,7 +10,7 @@ type TProps = {
   };
 };
 export default function DetailsBord({ data, starSize }: TProps) {
-  return starSize.width === '10' ? (
+  return starSize.width === '10px' ? (
     <DetailsBordMob data={data} starSize={starSize} />
   ) : (
     <DetailsBordDesk data={data} starSize={starSize} />
