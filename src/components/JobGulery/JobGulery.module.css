@@ -1,5 +1,5 @@
 .JobGulery {
-  @apply mb-6  flex flex-col items-center text-start xl:w-full;
+  @apply mb-6  flex flex-col items-center text-start lg:w-full;
 }
 
 .img {

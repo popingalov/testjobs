@@ -42,7 +42,7 @@ const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
           <li
             key={id()}
             className="mb-2 flex w-full max-w-[400px] rounded-lg border-2 px-3 pt-3 pb-7 text-[#878D9D] 
-                last:mb-0 xl:w-[1400px] xl:max-w-[100vw]  "
+                last:mb-0 lg:w-[1400px] lg:max-w-[100vw]  "
           >
             <img
               className={s.img}
@@ -50,21 +50,21 @@ const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
               src={`${el.pictures[0]}?random=${id()}`}
               alt="foto"
             />
-            <div className="xl:flex xl:w-full xl:flex-row-reverse xl:items-end  xl:justify-between">
-              <div className=" mb-3 flex justify-between xl:mb-0  xl:h-[calc(100%-20px)] xl:w-full xl:max-w-xs xl:items-center">
+            <div className="lg:flex lg:w-full lg:flex-row-reverse lg:items-end  lg:justify-between">
+              <div className=" mb-3 flex justify-between lg:mb-0  lg:h-[calc(100%-20px)] lg:w-full lg:max-w-xs lg:items-center">
                 <ul className="mr-24 flex">{takeStarRating()}</ul>
                 <p
                   className="text-left text-xs font-light 
-                       xl:flex xl:h-full xl:flex-col xl:content-between xl:items-end xl:justify-between "
+                       lg:flex lg:h-full lg:flex-col lg:content-between lg:items-end lg:justify-between "
                 >
-                  <Bookmark className="hidden hover:fill-slate-500 xl:block" />
+                  <Bookmark className="hidden hover:fill-slate-500 lg:block" />
                   {takeDifferenceTime(el.updatedAt)}
                 </p>
               </div>
               <div>
                 <div
                   onClick={() => goTo(el.id, idx)}
-                  className="xl:bloc cursor-pointer xl:max-w-[700px]"
+                  className="lg:bloc cursor-pointer lg:max-w-[700px]"
                 >
                   <p className="text-bol  mb-1 font-bold text-fill opacity-90">
                     {el.title}
