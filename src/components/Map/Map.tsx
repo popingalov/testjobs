@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import myIcon from '../../assets/icons/shape.svg';
 import styles from './style.json';
-
 const containerStyle = {
   width: '100%',
   height: '220px',
@@ -26,9 +25,11 @@ function Map({ data }: IMap) {
   const [triger, setTriger] = useState(false);
 
   const center = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const normLoc = { lat: data.location.lat, lng: data.location.long };
     // знову десь в тихому океані
     return { lat: 50.473269654751675, lng: 30.466887628201324 };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   setTimeout(() => {

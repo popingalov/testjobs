@@ -1,5 +1,5 @@
 import s from './Pagination.module.css';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 interface INumber {
   number: number;
   triger: boolean;

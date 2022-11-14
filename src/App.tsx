@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import miniApi from './miniApi';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useLoadScript } from '@react-google-maps/api';
@@ -12,6 +12,7 @@ function App() {
   const [details, setDetais] = useState<IData | null>(null);
   const starSize = useResize();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyADV0BWsVdtInBGNDQiYbm9hzbLvKLgik4',
   });
@@ -41,6 +42,7 @@ function App() {
   }
 
   async function takeGeocod(obj: { lat: number; long: number }) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const normalize = { lat: obj.lat, lng: obj.long };
     const geocoder = new google.maps.Geocoder();
     // по координатам з беку нічого не знаходить
