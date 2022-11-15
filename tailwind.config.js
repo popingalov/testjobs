@@ -20,6 +20,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+        roboto: ['Roboto', ...defaultTheme.fontFamily.serif],
       },
     },
   },

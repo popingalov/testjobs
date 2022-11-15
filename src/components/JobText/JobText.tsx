@@ -11,7 +11,7 @@ export default function Mob({ el }: IMob) {
   last?.shift();
   last?.pop();
   return (
-    <div className="mb-7">
+    <div className="mb-7 font-roboto">
       {result?.map((el, idx) => {
         if (idx === 0) {
           return <p className="mb-10">{el}</p>;

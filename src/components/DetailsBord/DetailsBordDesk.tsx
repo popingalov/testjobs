@@ -36,11 +36,11 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
             <p> Job Details</p>
             <div className="flex">
               <p className="sr-only">Manipulation</p>
-              <div className="mr-9 flex items-center">
+              <div className="mr-9 flex items-center font-roboto">
                 <Star className="mr-3 hover:fill-slate-500" />
                 <span>Save to my list</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center font-roboto">
                 <Shape className="mr-3 hover:scale-90" />
                 <span>Shape</span>
               </div>
@@ -51,12 +51,12 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
           </div>
           <h2 className="mb-[5px] font-bold">{el.title}</h2>
           <div className="justify-content: mb-4 flex items-center justify-between">
-            <p className="block max-w-[200px] text-filltex">
+            <p className="block max-w-[200px] font-roboto text-filltex">
               {takeDifferenceTime(el.updatedAt)}
             </p>
-            <div className="text-end">
+            <div className="text-end font-roboto">
               <p>Brutto, per year</p>
-              <p className="flex-col justify-end font-bold">
+              <p className="flex-col justify-end font-roboto font-bold">
                 &#8364; {el.salary.replace(/k/g, '00')}
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
           </section>
           <section>
             <h3 className="mb-2 border-b-2 font-bold ">Additional info</h3>
-            <p className="mb-2">Employment type</p>
+            <p className="mb-2 font-roboto">Employment type</p>
             <ul className="mb-5 flex  flex-wrap gap-2">
               {el.employment_type.map(el => {
                 return (
@@ -94,7 +94,7 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
           </section>
 
           <section>
-            <h3 className="mb-2">Benefits</h3>
+            <h3 className="mb-2 font-roboto">Benefits</h3>
             <ul className="mb-16 flex flex-wrap gap-2">
               {el.benefits.map(el => {
                 return (
@@ -111,14 +111,14 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
             }}
             className="flex h-[50px] w-[220px] items-center justify-center rounded-lg bg-slate-300 bg-opacity-30 duration-300 hover:scale-125"
           >
-            <Arrow className="mr-3" />
+            <Arrow className="mr-3 font-semibold text-fill" />
             <div className="font-bold text-fill">Return to job board</div>
           </button>
         </div>
         <address>
           <h3 className="sr-only">Contacts</h3>{' '}
-          <div className=" rounded-t-lg bg-[#2A3047] px-16 pt-8 pb-6  text-[#E7EAF0] opacity-95">
-            <p className="mb-4">
+          <div className=" rounded-t-lg bg-[#2A3047] px-16 pt-8 pb-6 font-roboto  text-[#E7EAF0] opacity-95">
+            <p className="mb-4 font-sans font-bold text-white">
               Departament name. <br></br> {el.name}
             </p>
             <div className="mb-2 flex items-start">
