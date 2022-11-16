@@ -116,7 +116,7 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
         </div>
         <address>
           <h3 className="sr-only">Contacts</h3>{' '}
-          <div className=" rounded-t-lg bg-[#2A3047] px-16 pt-8 pb-6 font-roboto  text-[#E7EAF0] opacity-95">
+          <div className=" rounded-t-lg bg-[#2A3047] bg-circle bg-no-repeat px-16 pt-8 pb-6 font-roboto  text-[#E7EAF0] opacity-95">
             <p className="mb-4 font-sans font-bold text-white">
               Departament name. <br></br> {el.name}
             </p>

@@ -22,6 +22,9 @@ module.exports = {
         sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
         roboto: ['Roboto', ...defaultTheme.fontFamily.serif],
       },
+      backgroundImage: {
+        circle: "url('/src/assets/circle.png')",
+      },
     },
   },
   plugins: [],
