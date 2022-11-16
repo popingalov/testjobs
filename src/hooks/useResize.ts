@@ -1,37 +1,20 @@
-import {useState, useRef,useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
 export default function useResponsiveBreakpoints() {
     const version = {
         desktop: { width: '20px', height: '20px' },
         mobile: { width: '10px', height: '10px' }
     }
-    const elRef = document.getElementById('root')
-    const [breakSize, setBreakSize] = useState(version.desktop)
-    const observer = useRef(
-    new ResizeObserver(entries => {
-        const { width } = entries[0].contentRect
-       
-        if (width < 1024) {
-            setBreakSize(version.mobile)    
-            return
-        }
-         setBreakSize(version.desktop)  
-    })
-  )
+      const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    //щоб не ругало
-    const miniFisx = observer
-      if (elRef) {
-       
-      observer.current.observe(elRef)
-  
-  return () => {
-      miniFisx.current.unobserve(elRef)
+    const resizeScrn = () => {
+        setScreenWidth(window.innerWidth)
     }
-}
-  
-  }, [elRef, observer])
 
-  return breakSize
+    useEffect(() => {
+        window.addEventListener('resize', resizeScrn, false);
+    }, [])
+
+
+  return screenWidth > 1024 ? version.desktop : version.mobile
 }

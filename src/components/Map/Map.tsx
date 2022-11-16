@@ -5,8 +5,8 @@ import styles from './style.json';
 const containerStyle = {
   width: '100%',
   height: '220px',
-  'border-bottom-left-radius': ' 0.5rem',
-  'border-bottom-right-radius': ' 0.5rem',
+  borderBottomLeftRadius: ' 0.5rem',
+  borderBottomRightRadius: ' 0.5rem',
 };
 const googleKey = process.env.REACT_APP_GOOGLEKEY || 's';
 interface IMap {

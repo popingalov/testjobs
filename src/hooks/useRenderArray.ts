@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
-function takeStartData(limit:number):number[] {
-
+function takeStartData(limit:number,location:any):number[] {
+    if (location.pathname === '/page/1') {
+     return [1, 2, 3, 4, 5,limit]
+}
     const arr = window.localStorage.getItem('idx')
     if (arr) {
         const result = JSON.parse(arr)
@@ -11,7 +13,7 @@ function takeStartData(limit:number):number[] {
     return [1, 2, 3, 4, 5,limit]
 }
 
-export default function useRenderArray(limit:number) {
-    const [renderEl, setRender] = useState(takeStartData(limit))
+export default function useRenderArray(limit:number,location:any) {
+    const [renderEl, setRender] = useState(takeStartData(limit,location))
     return {renderEl, setRender}
 }

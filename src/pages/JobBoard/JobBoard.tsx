@@ -9,7 +9,6 @@ export default function Home({
   upArray,
 }: TDataSize) {
   const imitPag = 28;
-
   return (
     <Container>
       <div className="flex flex-col items-center">

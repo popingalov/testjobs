@@ -17,7 +17,6 @@ type TProps = {
 
 export default function DetailsBordMob({ data }: TProps) {
   window.scroll(0, 0);
-  console.log('mob');
   const el: IData = data
     ? data
     : JSON.parse(localStorage.getItem('details') || 'Люблю ТС');

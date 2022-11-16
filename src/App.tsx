@@ -26,6 +26,7 @@ function App() {
 
     let newObj = [];
     let limitText = 'Мангеттен, Нью-Йорк Каунти';
+
     const limit = 1;
     let test = 0;
     const helper = oldObj;

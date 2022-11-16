@@ -18,7 +18,7 @@ const Pagination: FC<PaginationProps> = ({ limit, loadData }) => {
   const location = useLocation();
   const { pageNumber = 1 } = useParams();
   const [idxNumber, setIdxNumber] = useState(+pageNumber);
-  const { renderEl, setRender } = useRenderArray(limit);
+  const { renderEl, setRender } = useRenderArray(limit, location);
   const [load, setLoad]: any = useState(1);
 
   function handler(e: React.MouseEvent<HTMLElement>) {
