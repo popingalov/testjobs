@@ -15,7 +15,6 @@ function App() {
   const [data, setData] = useState<IData[] | any>();
   const [details, setDetais] = useState<IData | null>(null);
   const starSize = useResize();
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: googleKey,

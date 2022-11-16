@@ -137,21 +137,17 @@ const Pagination: FC<PaginationProps> = ({ limit, loadData }) => {
       </NavLink>
       {renderEl.map((el: number, idx: number) => {
         return (
-          <>
+          <div key={el}>
             <Number
               location={location}
-              key={el}
               handler={handler}
               triger={idxNumber === el ? true : false}
               number={el}
             />
             {idx === 4 && (
-              <Span
-                key={limit + 1}
-                load={() => setLoad((prev: number) => (prev += 1))}
-              />
+              <Span load={() => setLoad((prev: number) => (prev += 1))} />
             )}
-          </>
+          </div>
         );
       })}
 
