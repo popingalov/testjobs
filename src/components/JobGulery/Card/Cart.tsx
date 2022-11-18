@@ -5,12 +5,12 @@ import { ReactComponent as Location } from '../../../assets/icons/location.svg';
 import { ReactComponent as Bookmark } from '../../../assets/icons/bookmark.svg';
 import { v4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+
 import s from '../JobGulery.module.css';
 
 const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
   const id = React.useId;
   const navigate = useNavigate();
-
   function takeStarRating(): JSX.Element[] {
     const result = [];
     const random = Math.floor(Math.random() * 5 + 1);
@@ -35,6 +35,12 @@ const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
     navigate(`/details/${id}`);
   }
 
+  function helper(e: React.MouseEvent<SVGSVGElement, MouseEvent>, id: string) {
+    const path = window.location.origin;
+    const text = `${path}/details/${id}`;
+    navigator.clipboard.writeText(text);
+  }
+
   return (
     <>
       {apiData?.map((el, idx) => {
@@ -57,7 +63,10 @@ const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
                   className="text-left text-xs font-light 
                        lg:flex lg:h-full lg:flex-col lg:content-between lg:items-end lg:justify-between "
                 >
-                  <Bookmark className="hidden hover:fill-slate-500 lg:block" />
+                  <Bookmark
+                    onClick={e => helper(e, el.id)}
+                    className="hidden hover:fill-slate-500  lg:block"
+                  />
                   {takeDifferenceTime(el.updatedAt)}
                 </p>
               </div>
