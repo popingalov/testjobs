@@ -1,7 +1,7 @@
 import { ReactComponent as Star } from '../../assets/icons/starDetails.svg';
 import { ReactComponent as Shape } from '../../assets/icons/shapeLink.svg';
 import { ReactComponent as ShapeMini } from '../../assets/icons/shape.svg';
-import { takeDifferenceTime } from '../../helperFunc';
+import takeDifferenceTime from '../../helperFunc/takeDifferenceTime';
 import Mob from 'components/JobText';
 import Button from 'components/Button';
 import Map from 'components/Map';

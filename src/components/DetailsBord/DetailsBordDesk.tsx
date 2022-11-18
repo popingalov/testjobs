@@ -4,7 +4,7 @@ import { ReactComponent as Star } from '../../assets/icons/bookmark.svg';
 import { ReactComponent as Shape } from '../../assets/icons/shapeLink.svg';
 import { ReactComponent as ShapeMini } from '../../assets/icons/shape.svg';
 import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
-import { takeDifferenceTime } from '../../helperFunc';
+import takeDifferenceTime from '../../helperFunc/takeDifferenceTime';
 import { useNavigate } from 'react-router-dom';
 import Mob from 'components/JobText';
 import Button from 'components/Button';

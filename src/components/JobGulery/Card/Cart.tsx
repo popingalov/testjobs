@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { takeDifferenceTime } from '../../../helperFunc';
+import takeDifferenceTime from '../../../helperFunc/takeDifferenceTime';
 import { ReactComponent as Star } from '../../../assets/icons/star.svg';
 import { ReactComponent as Location } from '../../../assets/icons/location.svg';
 import { ReactComponent as Bookmark } from '../../../assets/icons/bookmark.svg';
