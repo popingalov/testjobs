@@ -1,24 +1,21 @@
 import { useState, Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useLoadScript } from '@react-google-maps/api';
 import HomePage from './pages/JobBoard';
 import useApiControl from 'hooks/useApiControl';
 //
 import useResize from './hooks/useResize';
-const googleKey = process.env.REACT_APP_GOOGLEKEY || 's';
+import Load from 'components/Load';
 //
 
 const DetailsBord = lazy(() => import('pages/DetailsBord'));
 
 function App() {
   const [details, setDetais] = useState<IData | null>(null);
+
   const { data, setPage } = useApiControl();
 
   const starSize = useResize();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: googleKey,
-  });
 
   function upArray(idx: number) {
     if (data) setDetais(data[idx]);
@@ -27,9 +24,9 @@ function App() {
   return (
     <>
       {!data ? (
-        <div>Я спінер</div>
+        <Load />
       ) : (
-        <Suspense fallback={<div>Я спінер</div>}>
+        <Suspense fallback={<Load />}>
           <Routes>
             <Route path="/" element={<Navigate state="/page" to="/page/1" />} />
             <Route

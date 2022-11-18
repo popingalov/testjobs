@@ -7,7 +7,7 @@ const BASE = {
 }
 axios.defaults.baseURL = BASE.URL;
 axios.defaults.headers.common.Authorization = `Bearer ${BASE.TOKEN}`;
-
+axios.defaults.timeout = 2000
 
 
 async function miniApi(page: number = 1) {
@@ -15,6 +15,8 @@ async function miniApi(page: number = 1) {
       const { data } = await axios.get<IData[]>(`/data?page=${page}`);
     return data
    } catch (error) {
+  alert('json-generator тю-тю, гружу mock json')
+     
     return false
    }
   }
