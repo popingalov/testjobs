@@ -16,7 +16,6 @@ export default async function startState(page: number = 1) {
         const stringa = await takeGeocod(el.location) || limitText
         oldObj.geoCode = stringa;
         newObj.push(oldObj);
-        console.log(stringa);
         
         test += 1;
       } else {

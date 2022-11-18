@@ -70,6 +70,7 @@ export default function DetailsBordDesk({ data, starSize }: TProps) {
               {el.pictures.map(el => {
                 return (
                   <img
+                    key={id()}
                     className="block h-36 w-1/3"
                     src={`${el}?random=${id()}`}
                     alt="foto"

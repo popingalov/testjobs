@@ -1,8 +1,7 @@
-import { useEffect, useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useLoadScript } from '@react-google-maps/api';
 import HomePage from './pages/JobBoard';
-import takeData from './helperFunc/takeStartState';
 import useApiControl from 'hooks/useApiControl';
 //
 import useResize from './hooks/useResize';
@@ -20,13 +19,6 @@ function App() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: googleKey,
   });
-
-  useEffect(() => {
-    if (!data) {
-      takeData(1);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   function upArray(idx: number) {
     if (data) setDetais(data[idx]);
