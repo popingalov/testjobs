@@ -19,7 +19,7 @@ module.exports = {
         title: '#3A4562',
       },
       fontFamily: {
-        sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+        sans: ['Proxima Nova, sans-serif'],
         roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {

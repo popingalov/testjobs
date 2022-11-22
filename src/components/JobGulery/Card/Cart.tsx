@@ -35,7 +35,7 @@ const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
     navigate(`/details/${id}`);
   }
 
-  function helper(e: React.MouseEvent<SVGSVGElement, MouseEvent>, id: string) {
+  function save(id: string) {
     const path = window.location.origin;
     const text = `${path}/details/${id}`;
     navigator.clipboard.writeText(text);
@@ -64,7 +64,7 @@ const Cart: FC<TDataSize> = ({ apiData, starSize, upArray }) => {
                        lg:flex lg:h-full lg:flex-col lg:content-between lg:items-end lg:justify-between "
                 >
                   <Bookmark
-                    onClick={e => helper(e, el.id)}
+                    onClick={() => save(el.id)}
                     className="hidden hover:fill-slate-500  lg:block"
                   />
                   {takeDifferenceTime(el.updatedAt)}

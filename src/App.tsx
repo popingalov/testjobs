@@ -1,3 +1,4 @@
+
 import { useState, Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/JobBoard';
